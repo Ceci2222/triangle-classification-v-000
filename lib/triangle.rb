@@ -1,16 +1,16 @@
 class Triangle
-  attr_accessor :side1, :side2, :side3
+  attr_accessor :side_A, :side_B, :side_C
   
-  def initialize(side1, side2, side3)
+  def initialize(side_A, side_B, side_C)
   end
 
   def kind
-    if ((side1+side2) < side3) || ((side2+side3) < side1) || ((side1+side3) < side2) || (side1 <= 0) || (side2 <= 0) || (side3 <= 0) 
+    if ((side_A + side_B) < side_C) || ((side_B + side_C) < side_A) || ((side_A + side_C) < side_B) || (side_A <= 0) || (side_B <= 0) || (side_C <= 0) 
       raise TriangleError
       
-    elsif (side1 == side2) && (side1 == side3)
+    elsif (side_A == side_B) && (side_A == side_C)
       :equilateral
-    elsif (side1 == side2) || (side1 == side2) || (side2 == side3)
+    elsif (side_A == side_B) || (side_A == side_C) || (side_B == side_C)
       :isosceles
     else
       :scalene
