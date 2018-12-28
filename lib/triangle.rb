@@ -8,8 +8,8 @@ class Triangle
   end
 
   def kind
-    if ((side_A + side_B) < side_C) || ((side_B + side_C) < side_A) || ((side_A + side_C) < side_B) || (side_A <= 0) || (side_B <= 0) || (side_C <= 0) 
-      raise Triangle::TriangleError
+    if ((side_A + side_B) <= side_C) || ((side_B + side_C) <= side_A) || ((side_A + side_C) <= side_B) || (side_A <= 0) || (side_B <= 0) || (side_C <= 0) 
+      raise TriangleError
       
     elsif (side_A == side_B) && (side_A == side_C)
       :equilateral
